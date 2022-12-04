@@ -105,16 +105,24 @@ class NaiveBayes:
                         likelihood = likelihood * x_probability
                         
                         general_mean = self.probabilities[column]['general']['mean']
-                        general_std = self.probabilities[column]['general']['mean']
+                        general_std = self.probabilities[column]['general']['std']
                         general_probability = self.normal_distr_fn(x, general_mean, general_std)
                         evidence = evidence * general_probability
                     else:
                         x = data_instance[column]
-                        likelihood = likelihood * self.probabilities[column][x][target_class]
-                        evidence = evidence * self.probabilities[column][x]['general']
+                        if x in self.probabilities[column]:
+                            likelihood = likelihood * self.probabilities[column][x][target_class]
+                            evidence = evidence * self.probabilities[column][x]['general']
+                        else:
+                            likelihood = 0
+                            evidence = 0
                 
                 # calculate posterior and assign to dict for the current target class
-                posterior = (likelihood * prior_probability) / (evidence)
+                posterior = 0
+                if evidence == 0:
+                    posterior = 0
+                else:
+                    posterior = (likelihood * prior_probability) / (evidence)
                 probabilities_per_class[target_class] = posterior
                 
             # select the target class varaible with the highest probability to return for the instance
