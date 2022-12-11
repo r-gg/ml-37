@@ -79,7 +79,7 @@ class NaiveBayes:
 
         # add the general target_class probabilities as well
         self.probabilities["targets"] = target_probabilities
-        print(self.probabilities)
+        # print(self.probabilities)
         
     def predict(self, df):
         
