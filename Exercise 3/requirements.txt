@@ -4,3 +4,6 @@ numpy
 scikit-learn
 matplotlib
 seaborn
+transformers
+tensorflow_hub
+tensorflow_text
