@@ -6,3 +6,4 @@
 *.iml
 out
 gen
+models/best_model_nn_news.sav
