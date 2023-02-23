@@ -8,3 +8,4 @@ out
 gen
 models/best_model_nn_news.sav
 models/best_model_nn_reviews.sav
+models/best_model_nn_reviews_augmented.sav
