@@ -7,3 +7,6 @@ seaborn
 transformers
 tensorflow_hub
 tensorflow-text
+tensorflow
+keras-tuner
+nltk
