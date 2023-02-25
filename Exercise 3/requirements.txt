@@ -10,3 +10,4 @@ tensorflow-text
 tensorflow
 keras-tuner
 nltk
+pickle
